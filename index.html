@@ -66,29 +66,30 @@
   .cd-label .k{color:var(--gold-light);margin-right:.6rem}
   .cd-label .v{font-weight:600}
   .cd-which{font-size:.82rem;opacity:.85;letter-spacing:.04em}
+  .cd-right{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 20px}
+  .countdown .btn{padding:.6rem 1.2rem;font-size:.8rem}
 
   /* Pastors */
   .pastors{display:grid;grid-template-columns:1fr 1.1fr;align-items:center;gap:clamp(32px,6vw,80px);padding:clamp(64px,9vw,110px) 0}
   .pastors figure{position:relative;justify-self:center;width:min(100%,400px)}
-  .pastors figure::before{content:"";position:absolute;left:8%;right:8%;top:14%;bottom:0;background:var(--cream);z-index:-1}
   .pastors img{width:100%;height:auto;mix-blend-mode:multiply}
-  .pastors figcaption{text-align:center;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:.9rem}
-  .pastors p{color:var(--muted);margin-bottom:1rem;font-size:1.02rem}
-  .pastors p.lead{color:var(--ink);font-size:1.12rem}
-  .pastors .names{font-weight:600;color:var(--navy)}
+  .pastors figcaption{text-align:center;font-size:.82rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);margin-top:.9rem;padding-top:.9rem;border-top:3px solid var(--gold)}
+  .pastors p{color:var(--ink);margin-bottom:1rem;font-size:1.08rem;line-height:1.7}
+  .pastors .names, .pastors strong{font-weight:700;color:var(--navy)}
 
   /* Gather (service times) */
-  .gather{background:var(--gold);position:relative;overflow:hidden;padding:clamp(64px,8vw,96px) 0}
-  .gather .ring{position:absolute;left:-90px;top:-90px;width:300px;height:auto;opacity:.16;pointer-events:none}
+  .gather{background:linear-gradient(160deg,#22355A 0%,var(--navy) 55%,var(--navy-deep) 100%);position:relative;overflow:hidden;padding:clamp(64px,8vw,96px) 0}
+  .gather .ring{position:absolute;left:-90px;top:-90px;width:300px;height:auto;opacity:.08;pointer-events:none}
   .gather h2{font-family:var(--serif);font-weight:400;color:#fff;font-size:clamp(2rem,4.4vw,2.9rem);line-height:1.1;position:relative}
-  .gather .sub{color:#FFF6E6;max-width:620px;margin:.6rem 0 2.4rem;position:relative}
+  .gather .sub{color:#C9D1DF;max-width:620px;margin:.6rem 0 2.4rem;position:relative}
   .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;position:relative}
-  .card{background:#fff;padding:28px 26px 30px;box-shadow:0 12px 30px rgba(80,50,0,.18)}
+  .card{background:#fff;padding:28px 26px 30px;box-shadow:0 14px 34px rgba(0,0,0,.28);border-top:4px solid var(--gold)}
   .card .dot{width:56px;height:56px;border-radius:50%;border:3px solid var(--gold);display:grid;place-items:center;margin-bottom:1.1rem}
   .card .dot svg{width:24px;height:24px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
   .card h3{font-weight:800;font-size:1.08rem;letter-spacing:.04em;text-transform:uppercase;color:var(--navy)}
   .card .time{font-family:var(--serif);color:var(--gold);font-size:1.7rem;margin:.25rem 0 .5rem}
   .card p{color:var(--muted);font-size:.95rem}
+  .card .when{display:block;color:var(--navy);font-weight:700;margin-bottom:.2rem}
 
   /* Next steps */
   .steps{padding:clamp(64px,9vw,110px) 0}
@@ -205,7 +206,7 @@
 <section class="countdown" aria-live="polite">
   <div class="wrap">
     <div class="cd-label"><span class="k">Next Service</span><span class="v" id="cd-time">Sunday 10:00 AM</span></div>
-    <div class="cd-which">Sunday Worship Service · 10:00 AM CT</div>
+    <div class="cd-right"><span class="cd-which">Sunday Worship Service · 10:00 AM CT</span><a class="btn give-link" href="#" target="_blank" rel="noopener">Give Online</a></div>
   </div>
 </section>
 
@@ -218,9 +219,10 @@
     <div>
       <div class="eyebrow">Senior Pastor L. J. Miller &amp; Lady Shannon Miller</div>
       <h2 class="title">Our Pastors</h2>
-      <p class="lead"><span class="names">Senior Pastor L. J. Miller and Lady Shannon Miller</span> invite you and your family to worship with us. We would love to welcome you!</p>
-      <p>Whether this is your first visit or you're coming home, there's a place for you at House of Freedom. Come as you are and experience the freedom that is found in Christ.</p>
-      <a class="btn" href="#visit">Worship With Us</a>
+      <p class="lead"><span class="names">Senior Pastor L. J. Miller and Lady Shannon Miller</span> warmly invite you and your family to worship with us at <strong>House of Freedom</strong>!</p>
+      <p>Whether you're visiting for the first time or coming home, there's a place for you here. Come as you are, grow in faith, and experience the freedom found in Christ.</p>
+      <p class="lead">We would love to welcome you!</p>
+      <a class="btn navy" href="#visit">Worship With Us</a>
     </div>
   </section>
 
@@ -246,7 +248,7 @@
           <div class="dot"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><path d="M6 21v-2a6 6 0 0 1 12 0v2"/></svg></div>
           <h3>Kingdom Kids Church</h3>
           <div class="time">Ages 2–8</div>
-          <p>A place for children ages 2–8 to learn about the goodness of God.</p>
+          <p><strong class="when">Sundays after offering.</strong> A place for children ages 2–8 to learn about the goodness of God.</p>
         </article>
       </div>
     </div>
@@ -282,7 +284,8 @@
       <h2 class="title">We'd Love to See You</h2>
       <dl>
         <div><dt>Location</dt><dd><a href="https://www.google.com/maps/search/?api=1&amp;query=3507+Moss+Street+Lafayette+LA+70507" target="_blank" rel="noopener">3507 Moss Street<br>Lafayette, LA 70507</a></dd></div>
-        <div><dt>Service Times</dt><dd>Sunday Worship Service · 10:00 AM<br>Wednesday Bible Study · 7:00 PM<br>Kingdom Kids Church · Ages 2–8</dd></div>
+        <div><dt>Service Times</dt><dd>Sunday Worship Service · 10:00 AM<br>Wednesday Bible Study · 7:00 PM<br>Kingdom Kids Church · Ages 2–8 (Sundays after offering)</dd></div>
+        <div class="give-wrap"><dt>Giving</dt><dd><a class="give-link" href="#" target="_blank" rel="noopener">Give online securely through Realm</a></dd></div>
         <div><dt>Questions?</dt><dd><a href="mailto:hofadmn@gmail.com">hofadmn@gmail.com</a></dd></div>
       </dl>
       <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=3507+Moss+Street+Lafayette+LA+70507" target="_blank" rel="noopener">Get Directions</a>
@@ -306,10 +309,11 @@
       <h4>House of Freedom</h4>
       <p>3507 Moss Street<br>Lafayette, LA 70507</p>
       <p style="margin-top:.6rem"><a href="mailto:hofadmn@gmail.com">hofadmn@gmail.com</a></p>
+      <p class="give-wrap" style="margin-top:.6rem"><a class="give-link" href="#" target="_blank" rel="noopener" style="color:var(--gold-light);font-weight:600">Give Online →</a></p>
     </div>
     <div>
       <h4>Service Times</h4>
-      <p>Sunday Worship 10:00 AM<br>Wednesday Bible Study 7:00 PM<br>Kingdom Kids Church · Ages 2–8</p>
+      <p>Sunday Worship 10:00 AM<br>Wednesday Bible Study 7:00 PM<br>Kingdom Kids Church · Ages 2–8<br>Sundays after offering</p>
     </div>
   </div>
   <div class="copy">© <span id="yr">2026</span> House of Freedom. All rights reserved.</div>
@@ -479,6 +483,15 @@
      The very first submission sends a one-time activation email to that inbox;
      click "Activate Form" in it, and every submission after that is delivered. */
   var FORM_ENDPOINT = 'https://formsubmit.co/ajax/hofpartnercare@gmail.com';
+
+  /* ---------- Giving link ----------
+     Paste the church's full Realm giving link between the quotes below.
+     While it's empty, every "Give Online" button stays hidden. */
+  var GIVE_URL = 'https://onrealm.org/HouseFreedom/-/form/give/now';
+  document.querySelectorAll('.give-link').forEach(function(a){
+    if (GIVE_URL) a.href = GIVE_URL;
+    else (a.closest('.give-wrap') || a).style.display = 'none';
+  });
 
   document.getElementById('yr').textContent = new Date().getFullYear();
 
